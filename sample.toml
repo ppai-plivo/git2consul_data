@@ -1,0 +1,11 @@
+worker_type = "nps"        # unused; possible values: nps, mps
+producer_count = 1         # number of goroutines that read from SharQ
+consumer_count = 5         # number of goroutines that concurrently process dequeued message
+buffer_size = 0            # 0 means unbuffered
+
+[log]
+  environment = "dev"        # supported values: dev, prod
+
+[producer]
+  poll_queue_interval = 1    # sleep on successful dequeue; in ms
+  backoff_interval = 5       # sleep on empty dequeue; in ms
